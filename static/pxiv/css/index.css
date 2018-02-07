@@ -1,0 +1,49 @@
+
+.el-row {
+    margin-bottom: 20px;
+
+}
+
+.el-col {
+    width: 480px;
+    height: 600px;
+    border-radius: 4px;
+}
+
+.bg-purple-dark {
+    background: #99a9bf;
+}
+
+.bg-purple {
+    background: #d3dce6;
+}
+
+.bg-purple-light {
+    background: #e5e9f2;
+}
+
+.grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+}
+
+.row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+}
+
+.main-content {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.card {
+    width: 411px;
+    height: 273px;
+}
+.image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}

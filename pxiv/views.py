@@ -22,10 +22,11 @@ class restful(APIView):
         if request.method == 'POST':
             json_str = (request.body)
             url = "https://api.imjad.cn/interface/img/PixivProxy.php"
+            pxiv_url = "https://i.pximg.net/c/480x960/img-master/img/2017/10/29/20/34/00/65649899_p0_master1200.jpg"
             headers = {
                 "authority": "api.imjad.cn",
                 "method": "GET",
-                "path": "/interface/img/PixivProxy.php?url=https://i.pximg.net/c/480x960/img-master/img/2017/12/28/20/21/14/66505036_p0_master1200.jpg",
+                "path": "/interface/img/PixivProxy.php?url="+pxiv_url,
                 "scheme": "https",
                 "accept": "image/webp,image/apng,image/*,*/*;q=0.8",
                 "accept-encoding": "gzip, deflate, br",
@@ -33,7 +34,7 @@ class restful(APIView):
                 "referer": "https://api.imjad.cn/pixiv.md",
             }
             data = {
-                "url": "https://i.pximg.net/c/480x960/img-master/img/2017/12/28/20/21/14/66505036_p0_master1200.jpg",
+                "url": pxiv_url,
             }
             res_img = requests.get(url, data, headers=headers, verify=False)
             base64_res = base64.b64encode(res_img.content).decode('ascii')
