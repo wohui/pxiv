@@ -1,0 +1,42 @@
+{% load static %}
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="{% get_current_language as LANGUAGE_CODE %}">
+<link rel="shortcut icon" href="{% static 'pxiv/imgs/favicon.ico' %}" type="image/vnd.microsoft.icon"/>
+<!-- 引入样式 -->
+<link rel="stylesheet" href="{% static  'element-ui/index.css' %}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>PXiv</title>
+    {% block head %}
+    {% endblock head %}
+</head>
+<body>
+<script src="{% static 'vue/vue.js' %}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'vue/vue-router.js' %}" type="text/javascript" charset="utf-8"></script>
+{% verbatim %}
+<div id="app">
+    <p>喜欢美少女的三斤</p>
+     <el-card :body-style="{ padding: '0px' }">
+      <img :src="imgData" class="image">
+      <div style="padding: 14px;">
+        <span>{{ hitoko }}</span>
+        <div class="bottom clearfix">
+          <time class="time">{{ author }}</time>
+          <el-button type="text" class="button">赞</el-button>
+        </div>
+      </div>
+    </el-card>
+</div>
+
+
+{% endverbatim %}
+
+<!-- 引入element组件库 -->
+<script src="{% static 'element-ui/index.js' %}"  type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'pxiv/js/index.js' %}"  type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
