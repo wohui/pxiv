@@ -22,7 +22,7 @@ class restful(APIView):
         if request.method == 'POST':
             json_str = (request.body)
             url = "https://api.imjad.cn/interface/img/PixivProxy.php"
-            pxiv_url = "https://i.pximg.net/c/480x960/img-master/img/2017/10/29/20/34/00/65649899_p0_master1200.jpg"
+            pxiv_url = "https://i.pximg.net/c/480x960/img-master/img/2017/12/26/00/02/41/66458386_p0_master1200.jpg"
             headers = {
                 "authority": "api.imjad.cn",
                 "method": "GET",

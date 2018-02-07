@@ -1,12 +1,10 @@
 
 .el-row {
     margin-bottom: 20px;
-
 }
 
 .el-col {
-    width: 480px;
-    height: 600px;
+    width: 300px;
     border-radius: 4px;
 }
 
@@ -33,17 +31,12 @@
 }
 
 .main-content {
-    display: flex;
-    text-align: center;
-    justify-content: center;
+    margin-right: auto;
+	margin-left: auto;
+    width: 600px;
 }
-.card {
-    width: 411px;
-    height: 273px;
-}
+
 .image {
-    width: auto;
+    max-width: 300px;
     height: auto;
-    max-width: 100%;
-    max-height: 100%;
 }

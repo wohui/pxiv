@@ -4,6 +4,7 @@ var app = new Vue({
         imgData: "",
         hitoko: 'Hello!',
         author:'',
+        num: 5,
     },
     mounted() {
         this.getData()
