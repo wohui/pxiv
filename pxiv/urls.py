@@ -19,8 +19,8 @@ from django.conf.urls import include
 from pxiv import views
 urlpatterns = [
 
-    url(r'^getData', views.restful.get_data, name='getData'),
-
+    url(r'^getData', views.restful.get_img_data, name='getData'),
+    url(r'^getHitoData', views.restful.get_hito_data, name='getData'),
     url(r'^$', views.restful.index, name='index'),
 
 ]

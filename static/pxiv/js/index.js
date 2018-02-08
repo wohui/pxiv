@@ -1,18 +1,18 @@
 var app = new Vue({
     el: '#app',
     data: {
-        imgData: "",
-        hitoko: 'Hello!',
+        imgData: [],
+        hitoko: [],
         author:'',
         num: 5,
     },
     mounted() {
-        this.getData()
+        this.getData();
+        this.getHitoData();
     },
 
     methods: {
         getData() {
-            console.log("2333")
             fetch('/pxiv/getData',
                 {
                     method: 'POST',
@@ -34,10 +34,43 @@ var app = new Vue({
             }).then((json) => {
                 if (json['status'] == true) {
                     //this.openTopPopup(1, json['msg']);
-                    this.imgData = "data:image/jpeg;base64,"+json['data']['imgData'];
-                    this.author = json['data']['hitoko']['author'];
-                    this.hitoko = json['data']['hitoko']['hitokoto'];
+                    this.imgData = json['data'];
+                    //this.author = json['data']['hitoko']['author'];
+                    //this.hitoko = json['data']['hitoko']['hitokoto'];
                     console.log(json['msg']);
+
+                } else {
+                    //this.openTopPopup(0, json['msg']);
+                    console.log(json['msg'])
+                }
+            }).catch((err) => {
+                console.log("请求pxiv/getData失败：" + err);
+            });
+        },
+         getHitoData() {
+            fetch('/pxiv/getHitoData',
+                {
+                    method: 'POST',
+                    credentials: "same-origin",
+                    headers: {
+                        'Accept': 'application/json, text/plain, */*',
+                        'Content-Type': 'application/json',
+                    },
+                    //请求的参数
+                    //body: JSON.stringify(this.saveStoreWish)
+                }).then((response) => {
+                /*判断请求状态码*/
+                if (response.status !== 200) {
+                    console.log("请求失败，状态码为：" + response.status);
+                    return;
+                } else {
+                    return response.json();
+                }
+            }).then((json) => {
+                if (json['status'] == true) {
+                    //this.openTopPopup(1, json['msg']);
+                    //this.author = json['data']['hitoko']['author'];
+                    this.hitoko = json['data'];
 
                 } else {
                     //this.openTopPopup(0, json['msg']);

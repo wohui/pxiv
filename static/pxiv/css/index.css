@@ -34,10 +34,11 @@
     margin-right: auto;
     margin-left: auto;
     width: 1000px;
+    justify-content: center;
 }
 
 .img-ul {
-    width: 800px;
+    width: 1000px;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -79,9 +80,10 @@
 }
 .el-card {
     width: 100%;
+    max-width: 300px;
     height: 100%;
 }
 .img {
     width: auto;
-    height: 330px;
+    height: 270px;
 }
