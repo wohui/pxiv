@@ -19,38 +19,47 @@
 <script src="{% static 'vue/vue-router.js' %}" type="text/javascript" charset="utf-8"></script>
 {% verbatim %}
 <div id="app" class="root">
-    <div class="main-content">
-        <el-row :gutter="20" v-for="(item, index) in num" v-if='index%2==0'>
-            <el-col :span="6">
-                <div class="grid-content bg-purple">
-                    <el-card class="card" :body-style="{ padding: '0px' }">
-                        <img :src="imgData" class="image" alt="别着急，马上就来">
+    <div class="main">
+        <div class="content">
+            <ul class="img-ul">
+                <li class="img-li">
+                    <el-card class ="el-card" :body-style="{ padding: '0px' }">
+                        <img src="/static/pxiv/imgs/m1.jpg" class="img">
                         <div style="padding: 14px;">
-                            <span>{{ hitoko }}</span>
+                            <span>好吃的汉堡</span>
                             <div class="bottom clearfix">
-                                <time class="time">{{ author }}</time>
-                                <el-button type="text" class="button">赞{{ index }}</el-button>
+                                <time class="time">2017-10-18</time>
+                                <el-button type="text" class="button">点</el-button>
                             </div>
                         </div>
                     </el-card>
-                </div>
-            </el-col>
-            <el-col :span="6">
-                <div class="grid-content bg-purple">
-                    <el-card :body-style="{ padding: '0px' }">
-                        <img :src="imgData" class="image" alt="别着急，马上就来">
+                </li>
+               <li class="img-li">
+                    <el-card class ="el-card" :body-style="{ padding: '0px' }">
+                        <img src="/static/pxiv/imgs/m2.jpg" class="img">
                         <div style="padding: 14px;">
-                            <span>{{ hitoko }}</span>
+                            <span>好吃的汉堡</span>
                             <div class="bottom clearfix">
-                                <time class="time">{{ author }}</time>
-                                <el-button type="text" class="button">赞+{{ index+1 }}</el-button>
+                                <time class="time">2017-10-18</time>
+                                <el-button type="text" class="button">点</el-button>
                             </div>
                         </div>
                     </el-card>
-                </div>
-            </el-col>
-        </el-row>
-
+                </li>
+                <li class="img-li">
+                    <el-card class ="el-card" :body-style="{ padding: '0px' }">
+                        <img src="/static/pxiv/imgs/m1.jpg" class="img">
+                        <div style="padding: 14px;">
+                            <span>好吃的汉堡</span>
+                            <div class="bottom clearfix">
+                                <time class="time">2017-10-18</time>
+                                <el-button type="text" class="button">点</el-button>
+                            </div>
+                        </div>
+                    </el-card>
+                </li>
+            </ul>
+        </div>
     </div>
 
 
