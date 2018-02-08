@@ -32,7 +32,7 @@ class restful(APIView):
             pxiv_res = requests.get(pxiv_url, pxiv_data, verify=False)
             json_obj = json.loads(pxiv_res.text)
             data = []
-            for i in range(0, 10):
+            for i in range(0, 1):
                 pxiv_img_url = json_obj['response'][i]['image_urls']['px_480mw']
                 pxiv_img_base64_data = "data:image/jpeg;base64," + get_img_base64_data(pxiv_img_url)
                 data.append(pxiv_img_base64_data)
@@ -58,7 +58,7 @@ class restful(APIView):
                 "c": "c"
             }
             data = []
-            for i in range(0, 10):
+            for i in range(0, 1):
                 hitoko_res = requests.get(hitoko_url, hitoko_data, verify=False)
                 json_obj = json.loads(hitoko_res.text)
                 if json_obj:

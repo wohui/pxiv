@@ -80,10 +80,9 @@
 }
 .el-card {
     width: 100%;
-    max-width: 300px;
     height: 100%;
 }
 .img {
     width: auto;
-    height: 270px;
+    height: auto;
 }
