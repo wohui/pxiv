@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
+        imgFloatBtn:false,
         imgData: [],
         hitoko: [],
         author:'',

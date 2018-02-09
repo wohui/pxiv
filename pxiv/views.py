@@ -25,9 +25,9 @@ class restful(APIView):
             pxiv_url = "https://api.imjad.cn/pixiv/v1/"
             pxiv_data = {
                 "type": "search",
-                "per_page": 10,
-                "word": "香風智乃 1000users入り",
-                "page": 1,
+                "per_page": 1,
+                "word": "黑子",
+                "page": 2,
             }
             pxiv_res = requests.get(pxiv_url, pxiv_data, verify=False)
             json_obj = json.loads(pxiv_res.text)
