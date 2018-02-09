@@ -25,14 +25,14 @@ class restful(APIView):
             pxiv_url = "https://api.imjad.cn/pixiv/v1/"
             pxiv_data = {
                 "type": "search",
-                "per_page": 1,
-                "word": "黑子",
-                "page": 2,
+                "per_page": 10,
+                "word": "初音",
+                "page": 1,
             }
             pxiv_res = requests.get(pxiv_url, pxiv_data, verify=False)
             json_obj = json.loads(pxiv_res.text)
             data = []
-            for i in range(0, 1):
+            for i in range(0, 10):
                 pxiv_img_url = json_obj['response'][i]['image_urls']['px_480mw']
                 pxiv_img_base64_data = "data:image/jpeg;base64," + get_img_base64_data(pxiv_img_url)
                 data.append(pxiv_img_base64_data)
@@ -53,14 +53,18 @@ class restful(APIView):
     def get_hito_data(request):
         if request.method == 'POST':
             # 获取一言
-            hitoko_url = "https://sslapi.hitokoto.cn/"
+            hitoko_url = "https://api.imjad.cn/hitokoto"
             hitoko_data = {
-                "c": "c"
+                "c": "c",
+                "encode": "json",
+                "charset": "utf-8",
+                "length": 50,
             }
             data = []
-            for i in range(0, 1):
+            for i in range(0, 10):
                 hitoko_res = requests.get(hitoko_url, hitoko_data, verify=False)
-                json_obj = json.loads(hitoko_res.text)
+                hitoko_res_text = str(hitoko_res.text)
+                json_obj = json.loads(hitoko_res_text)
                 if json_obj:
                     hito_text = json_obj['hitokoto']
                     LOGGER.info(hito_text)
