@@ -31,6 +31,8 @@
     height: 18px;
     display:block;
     text-align: left;
+    text-decoration: none;
+    color: darkgrey;
 }
 .author-img img {
     width: 40px;
